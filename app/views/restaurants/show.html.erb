@@ -1,0 +1,14 @@
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?restaurant)">
+  <h1><%= @restaurant.name %></h1>
+</div>
+<div class="div-button">
+  <%= link_to "+ new review", new_restaurant_review_path(@restaurant), class: "button-new-review" %>
+</div>
+<div class="grid-index">
+  <% @reviews.each do |review| %>
+    <div class="card-review">
+      <p><%= review.content %></p>
+      <p><%= review.rating %></p>
+    </div>
+  <% end %>
+</div>
